@@ -1,0 +1,36 @@
+import * as zod from 'zod';
+
+export const userSchema = zod.object({
+    login: zod.string(),
+    id: zod.number(),
+    node_id: zod.string(),
+    avatar_url: zod.string().url(),
+    gravatar_id: zod.string(),
+    url: zod.string().url(),
+    html_url: zod.string().url(),
+    followers_url: zod.string().url(),
+    following_url: zod.string().url(),
+    gists_url: zod.string().url(),
+    starred_url: zod.string().url(),
+    subscriptions_url: zod.string().url(),
+    organizations_url: zod.string().url(),
+    repos_url: zod.string().url(),
+    events_url: zod.string().url(),
+    received_events_url: zod.string().url(),
+    type: zod.string(),
+    site_admin: zod.boolean(),
+    name: zod.string().nullable(),
+    company: zod.string().nullable(),
+    blog: zod.string().nullable(),
+    location: zod.string().nullable(),
+    email: zod.nullable(zod.string()),
+    hireable: zod.nullable(zod.boolean()),
+    bio: zod.nullable(zod.string()),
+    twitter_username: zod.nullable(zod.string()),
+    public_repos: zod.number(),
+    public_gists: zod.number(),
+    followers: zod.number(),
+    following: zod.number(),
+    created_at: zod.string(), // ISO date string
+    updated_at: zod.string()  // ISO date string
+  });
