@@ -49,9 +49,15 @@ Profile.Stats = function ProfileStats({
 }
   
 Profile.Links = function ProfileLinks({
-  location, twitter_username, blog, company
+  blog, 
+  company,
+  location, 
+  twitter_username, 
 }: {
-  location: string, twitter_username: string, blog: string, company: string
+  blog: string | null, 
+  company: string | null
+  location: string | null, 
+  twitter_username: string | null, 
 }){ 
   const {theme} = useTheme()
   const classLinks = clsx({
@@ -89,9 +95,13 @@ Profile.Links = function ProfileLinks({
 }
 
 Profile.Header = function ProfileHeader({
-  created_at, name, login
+  login,
+  name, 
+  created_at, 
 }: {
-  created_at: string, name: string, login: string
+  login: string | null
+  name: string | null, 
+  created_at: string | null, 
 }){
   const date = new Date(created_at || '');
   const months = [
